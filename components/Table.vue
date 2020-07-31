@@ -12,6 +12,7 @@
         <div class="table__content">
             <div class="table__row" v-for="(item, itemIndex) in getSorted" :key="itemIndex">
                 <div class="table__row-item" v-for="(header, headerIndex) in $props.headers" :key="headerIndex">
+                    <p class="table__mobile-hint">{{header.text}}</p>
                     <component v-bind:is="getItemValueRenderer(item, header.value)" v-bind="getItemValueData(item, header.value)"></component>
                 </div>
             </div>
